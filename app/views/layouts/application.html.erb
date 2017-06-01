@@ -9,6 +9,13 @@
   </head>
 
   <body>
-    <%= yield %>
+
+	<container class="flex-container">
+
+		<%= render "shared/topbar" %>
+	    <%= yield %>
+
+    </container>
+
   </body>
 </html>
