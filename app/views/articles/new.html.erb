@@ -1,0 +1,19 @@
+<h1 class="color-white">Create a new article</h1>
+
+<%= form_for @article do |f| %>
+
+	<p class="color-white">
+		<%= f.label :title %> 
+		<%= f.text_field :title %>
+	</p>
+
+	<p class="color-white">
+		<%= f.label :description %> <br />
+		<%= f.text_area :description %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+ <% end %>

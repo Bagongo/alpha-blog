@@ -3,6 +3,10 @@ body{
 	background-image: url(alpha_bg.jpg);
 }
 
+.color-white{
+	color: white;
+}
+
 .flex-container{
 	display: flex;
 	flex-flow: column;
