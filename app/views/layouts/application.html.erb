@@ -13,12 +13,7 @@
 	<container class="flex-container">
 
 		<%= render "shared/topbar" %>
-
-    <% flash.each do |name, msg| %>
-      <ul>
-        <li> <%= msg %> </li>
-      </ul>
-    <% end %>
+    <%= render "shared/messages" %>
 
     <%= yield %>
 
