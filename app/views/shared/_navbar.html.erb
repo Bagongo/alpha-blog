@@ -1,0 +1,14 @@
+<div id="topbar" class="topnav">
+    <%= link_to raw("&alpha;" + "lph" + "&alpha;"), root_path, id:"homebtn" %>
+	<div class="dropdown dd-hide">
+		<%= link_to "Blog", articles_path, class: "dropbtn" %>
+		<div class="dropdown-content">
+		  <%= link_to "New Article", new_article_path %>
+		  <a href="#">Show Article</a>
+		</div>
+	</div>
+	<div id="links-container">
+		<%= link_to "About", about_path, class: "dd-hide" %>
+	</div> 
+	<a href="javascript:void(0);" id="hamburger" onclick="myFunction()">&#9776;</a>
+</div>
