@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require styles
  *= require custom
  *= require navbar
  */
