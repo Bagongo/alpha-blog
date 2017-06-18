@@ -1,0 +1,13 @@
+.article-title{
+	font-weight: bolder;
+	font-size: 2.5rem;
+}
+
+.article-body{
+	margin: 8px 0;
+	padding: 16px;
+	border-top: 1px solid ghostwhite;
+	border-bottom: 1px solid ghostwhite;
+	font-weight: 200;
+}
+
