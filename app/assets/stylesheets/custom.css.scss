@@ -1,6 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.nomargin{
+    margin:0;
+}
+
+.nopadding{
+    padding: 0;
+}
+
 .faded-white-bg{
 	background-color: transparent;
 	background-color: rgba(255, 255, 255, 0.1);
@@ -15,24 +23,34 @@
     color: red;
 }
 
+html, body{
+    height: 100%;
+}
+
 body{
+    min-height: 100%;
 	background-image: url("alpha_bg.jpg");
+    padding: 75px 0 0 0;
 }
 
 .container{
 	color: white;
 }
 
+.footer-container{
+    margin: 0;
+    padding: 0;
+}
+
 footer {
-    position: fixed;
+    position: relative;
     width: 100%;
     height: 100px;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
-    left: 0;
-    bottom: 0;
+    top: calc(100% - 100px);
     background-color: black;
 }
 
