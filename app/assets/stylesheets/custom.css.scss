@@ -28,7 +28,6 @@ html, body{
 }
 
 body{
-    min-height: 100%;
 	background-image: url("alpha_bg.jpg");
     padding: 75px 0 0 0;
 }
@@ -51,6 +50,7 @@ footer {
     justify-content: space-around;
     align-items: center;
     top: calc(100% - 100px);
+    margin: 50px 0 0 0;
     background-color: black;
 }
 
