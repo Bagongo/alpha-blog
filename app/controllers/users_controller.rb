@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
+  
   def new
-    @user = User.new
+    @user = User.new # is this still necessary?
   end
 
   def create
@@ -25,6 +26,10 @@ class UsersController < ApplicationController
     else
       render "edit"
     end
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   private
