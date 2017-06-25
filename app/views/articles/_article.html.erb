@@ -8,8 +8,9 @@
         <div class="article-body">
           <%= truncate(art.description, length: 100) %>
           <div class="article-meta-details">
-            <small> created by <%= art.user.username if art.user %>
-                <%= time_ago_in_words(art.created_at) %> ago,
+            <small> created by <%= link_to art.user.username, user_path(art.user) if art.user %> 
+                <%= link_to gravatar_for(art.user, size: 20), user_path(art.user) if art.user %>
+                , <%= time_ago_in_words(art.created_at) %> ago,
                 modified <%= time_ago_in_words(art.updated_at) %> ago
             </small>
           </div> 
