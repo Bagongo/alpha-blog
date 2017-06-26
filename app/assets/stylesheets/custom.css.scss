@@ -25,6 +25,8 @@
 
 html, body{
     height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body{
@@ -32,13 +34,15 @@ body{
     padding: 75px 0 0 0;
 }
 
-.container{
-	color: white;
+.wrapper{
+    min-height: 100%;
+    margin: 0;
+    padding: 0 0 100px 0;
 }
 
-.footer-container{
-    margin: 0;
-    padding: 0;
+.container{
+    min-height: 100%;
+	color: white;
 }
 
 footer {
@@ -49,8 +53,8 @@ footer {
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
-    top: calc(100% - 100px);
-    margin: 50px 0 0 0;
+    left: 0;
+    margin: -100px 0 0 0;
     background-color: black;
 }
 
