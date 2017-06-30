@@ -1,6 +1,8 @@
 <div class="article-actions">
-  <%= link_to "edit this article", edit_article_path(article), class: "btn btn-xs btn-success" %>
-  <%= link_to "delete this article", article_path(article), method: :delete, 
-    data: {confirm: "Are you sure you want to delete '#{article.title}' ?"}, 
-    class: "btn btn-xs btn-danger" %> 
+  <% if logged_in? && current_user == article.user %>
+    <%= link_to "edit this article", edit_article_path(article), class: "btn btn-xs btn-success" %>
+    <%= link_to "delete this article", article_path(article), method: :delete, 
+      data: {confirm: "Are you sure you want to delete '#{article.title}' ?"}, 
+      class: "btn btn-xs btn-danger" %> 
+  <% end %>    
 </div>
