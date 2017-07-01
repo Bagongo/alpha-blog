@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.user = User.find(session[:user_id])
+    @article.user = current_user
     
     if @article.save
       flash[:success] = "Article was successfully created!"
@@ -27,8 +27,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def update
-    
+  def update   
     @article.user = User.find(session[:user_id])
 
     if @article.update(article_params)
@@ -58,7 +57,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @article.user
+      if current_user != @article.user && !current_user.admin? 
         flash[:danger] = "You can edit/delete only your own articles"
         redirect_to root_path
       end
