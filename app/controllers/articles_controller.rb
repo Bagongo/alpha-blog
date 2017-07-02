@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
+    @article.last_editor = current_user.username
     
     if @article.save
       flash[:success] = "Article was successfully created!"
@@ -27,8 +28,8 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def update   
-    @article.user = User.find(session[:user_id])
+  def update
+    @article.last_editor = current_user.username
 
     if @article.update(article_params)
       flash[:success] = "Article was successfully updated!"
