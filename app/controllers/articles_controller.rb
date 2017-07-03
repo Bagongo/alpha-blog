@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.paginate(page: params[:page], per_page: 5)
+    @articles.each  { |a| a.last_editor = User.find(a.last_editor_id) if User.exists?(a.last_editor_id) }
   end
 
   def new
@@ -18,7 +19,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.user = current_user
-    @article.last_editor = current_user.username
+    @article.last_editor_id = current_user.id
     
     if @article.save
       flash[:success] = "Article was successfully created!"
@@ -29,7 +30,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article.last_editor = current_user.username
+    @article.last_editor_id = current_user.id
+    @article.last_editor_name = current_user.username
 
     if @article.update(article_params)
       flash[:success] = "Article was successfully updated!"
@@ -40,6 +42,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article.last_editor = User.find(@article.last_editor_id) if User.exists?(@article.last_editor_id)
   end
 
   def destroy

@@ -19,6 +19,7 @@
   <p> <%= simple_format(@article.description) %> </p>
   <hr />
 
+  <%= render "./articles/article_meta_details", art: @article %>
   <%= render :partial => "article_actions", :locals => {:article => @article} %>
   <%= render "shared/back_to_articles" %>
 </div>
