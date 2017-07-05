@@ -2,11 +2,15 @@ require("test_helper")
 
 class CreateCategoriesTest < ActionDispatch::IntegrationTest
 
+  def setup
+    @user = User.create(username:"Paul", email:"dsa@sa.net", password:"dòsadaff", admin:true);
+  end
+
   test "get new category form and create category" do
     get new_category_path
     assert_template "categories/new"
     assert_difference "Category.count", 1 do
-      post categories_path, params: { category: {name: "sports"}}
+      post categories_path, params: { category: {name: "sports"} }
       follow_redirect!
     end
     assert_template "categories/index"
