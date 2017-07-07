@@ -1,4 +1,10 @@
-<h1 class="text-center"><%= @category.name %></h1>
+<div class="text-center category-header">
+  <h1 class="text-center"><%= @category.name %></h1>
+  <% if logged_in? && current_user.admin? %>
+    <small "text-center"><%= link_to "edit category name", edit_category_path(@category.id) %></small>
+  <% end %>  
+</div>  
+
 
 <div class="text-center">
   <%= will_paginate @category_articles %>
