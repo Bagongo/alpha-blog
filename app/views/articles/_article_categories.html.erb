@@ -1,0 +1,6 @@
+<div>
+  Categories: 
+  <% art.categories.each do |cat| %>
+    <span class="badge barely-faded-white-bg"> <%= link_to cat.name, category_path(cat.id) %> </span>
+  <% end %>
+</div>  

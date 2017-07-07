@@ -1,7 +1,7 @@
 
 <h2 class="text-center">Title: '<%= @article.title %>'</h2>
 
-<div class="well faded-black-bg col-xs-8 col-xs-offset-2">
+<div class="well article-show faded-black-bg col-xs-8 col-xs-offset-2">
   <ul class="list-without-style">
     <div class="row">
       <div class="col-md-4 col-md-offset-4 text-center faded-black-bg">
@@ -19,6 +19,9 @@
   <p> <%= simple_format(@article.description) %> </p>
   <hr />
 
+  <% if @article.categories.any? %>
+    <%= render "article_categories", art: @article %>
+  <% end %>
   <%= render "./articles/article_meta_details", art: @article %>
   <%= render :partial => "article_actions", :locals => {:article => @article} %>
   <%= render "shared/back_to_articles" %>

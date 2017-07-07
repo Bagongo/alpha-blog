@@ -8,6 +8,10 @@
         <div class="article-body">
           <%= truncate(art.description, length: 100) %>
         </div>
+
+        <% if art.categories.any? %>
+          <%= render "./articles/article_categories", art: art %>
+        <% end %>
         <%= render "./articles/article_meta_details", art: art %>
         <%= render :partial => "./articles/article_actions", :locals => {:article => art} %>
       </div>
